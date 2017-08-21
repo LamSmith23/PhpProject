@@ -12,6 +12,9 @@
                 <h3 style="text-align:center; color:blue;">PHP CRUD Grid | Golden State Warriors</h3>
             </div>
             <div class="row">
+              <p>
+                <a href="create.php" class="btn btn-success">Add Player</a>
+              </p>
                 <table class="table table-striped table-bordered">
                   <thead>
                     <tr>
@@ -19,6 +22,7 @@
                       <th>First Name</th>
                       <th>Last Name</th>
                       <th>Position</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -35,6 +39,7 @@
                             echo '<td>'. $row['First Name'] . '</td>';
                             echo '<td>'. $row['Last Name'] . '</td>';
                             echo '<td>'. $row['Position'] . '</td>';
+                            echo '<td><a class="btn btn-warning" href="read.php?ID='.$row['ID'].'">Read</a></td>';
                             echo '</tr>';
                    }
                    Database::disconnect();
