@@ -39,7 +39,13 @@
                             echo '<td>'. $row['FirstName'] . '</td>';
                             echo '<td>'. $row['LastName'] . '</td>';
                             echo '<td>'. $row['Position'] . '</td>';
-                            echo '<td><a class="btn btn-warning" href="read.php?ID='.$row['ID'].'">Read</a></td>';
+                            echo '<td width=250>';
+                            echo '<a class="btn" href="read.php?ID='.$row['ID'].'">Read</a>';
+                            echo ' ';
+                            echo '<a class="btn btn-success" href="update.php?ID='.$row['ID'].'">Update</a>';
+                            echo ' ';
+                            echo '<a class="btn btn-danger" href="delete.php?ID='.$row['ID'].'">Delete</a>';
+                            echo '</td>';
                             echo '</tr>';
                    }
                    Database::disconnect();
