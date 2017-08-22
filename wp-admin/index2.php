@@ -36,8 +36,8 @@
                    foreach ($pdo->query($sql) as $row) {
                             echo '<tr>';
                             echo '<td>'. $row['ID'] . '</td>';
-                            echo '<td>'. $row['First Name'] . '</td>';
-                            echo '<td>'. $row['Last Name'] . '</td>';
+                            echo '<td>'. $row['FirstName'] . '</td>';
+                            echo '<td>'. $row['LastName'] . '</td>';
                             echo '<td>'. $row['Position'] . '</td>';
                             echo '<td><a class="btn btn-warning" href="read.php?ID='.$row['ID'].'">Read</a></td>';
                             echo '</tr>';
