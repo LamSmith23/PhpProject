@@ -40,7 +40,7 @@
 
                     <form class="form-horizontal" action="delete.php" method="post">
                       <input type="hidden" name="ID" value="<?php echo $id;?>"/>
-                      <p class="alert alert-error">Are you sure to delete ?</p>
+                      <p class="alert alert-error">Are you sure Cut This Player ?  </p>
                       <div class="form-actions">
                           <button type="submit" class="btn btn-danger">Yes</button>
                           <a class="btn" href="index2.php">No</a>
