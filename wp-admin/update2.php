@@ -76,40 +76,43 @@
 
                 <div class="span10 offset1">
                     <div class="row">
-                        <h3>Update a Customer</h3>
+                        <h3>Update Player</h3>
                     </div>
 
-                    <form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
-                      <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
-                        <label class="control-label">Name</label>
+                    <form class="form-horizontal" action="update2.php?ID=<?php echo $id?>" method="post">
+                      <div class="control-group <?php echo !empty($FirstNameError)?'error':'';?>">
+                        <label class="control-label">First Name:</label>
                         <div class="controls">
-                            <input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
-                            <?php if (!empty($nameError)): ?>
-                                <span class="help-inline"><?php echo $nameError;?></span>
+                            <input name="FirstName" type="text"  placeholder="First Name" value="<?php echo !empty($FirstName)?$FirstName:'';?>">
+                            <?php if (!empty($FirstNameError)): ?>
+                                <span class="help-inline"><?php echo $FirstNameError;?></span>
                             <?php endif; ?>
                         </div>
                       </div>
-                      <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
-                        <label class="control-label">Email Address</label>
+
+                      <div class="control-group <?php echo !empty($LastNameError)?'error':'';?>">
+                        <label class="control-label">Last Name:</label>
                         <div class="controls">
-                            <input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($email)?$email:'';?>">
-                            <?php if (!empty($emailError)): ?>
-                                <span class="help-inline"><?php echo $emailError;?></span>
+                            <input name="LastName" type="text" placeholder="Last Name" value="<?php echo !empty($LastName)?$LastName:'';?>">
+                            <?php if (!empty($LastNameError)): ?>
+                                <span class="help-inline"><?php echo $LastNameError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
-                      <div class="control-group <?php echo !empty($mobileError)?'error':'';?>">
-                        <label class="control-label">Mobile Number</label>
+
+                      <div class="control-group <?php echo !empty($PositionError)?'error':'';?>">
+                        <label class="control-label">Position:</label>
                         <div class="controls">
-                            <input name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
-                            <?php if (!empty($mobileError)): ?>
-                                <span class="help-inline"><?php echo $mobileError;?></span>
+                            <input name="Position" type="text"  placeholder="Position" value="<?php echo !empty($Position)?$Position:'';?>">
+                            <?php if (!empty($PositionError)): ?>
+                                <span class="help-inline"><?php echo $PositionError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
+
                       <div class="form-actions">
-                          <button type="submit" class="btn btn-success">Update</button>
-                          <a class="btn" href="index.php">Back</a>
+                          <button type="submit" class="btn btn-success">Update Player</button>
+                          <a class="btn" href="index2.php">Back</a>
                         </div>
                     </form>
                 </div>
