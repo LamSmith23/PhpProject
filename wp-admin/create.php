@@ -5,23 +5,19 @@
 
     if ( !empty($_POST)) {
         // keep track validation errors
-        $IDError = null;
+
         $FirstNameError = null;
         $LastNameError = null;
         $PositionError = null;
 
         // keep track post values
-        $id = $_POST['ID'];
+
         $FirstName = $_POST['FirstName'];
         $LastName = $_POST['LastName'];
         $Position = $_POST['Position'];
 
         // validate input
         $valid = true;
-        if (empty($id)) {
-            $IDError = 'Please enter ID';
-            $valid = false;
-        }
 
         if (empty($FirstName)) {
             $FirstNameError = 'Please enter Name';
@@ -32,7 +28,7 @@
             $LastNameError = 'Please enter Last Name';
             $valid = false;
         }
-         
+
         if (empty($Position)) {
             $PositionError = 'Please enter Position';
             $valid = false;
@@ -42,9 +38,9 @@
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO wp_roster (ID,FirstName,LastName,Position) values(?, ?, ?, ?)";
+            $sql = "INSERT INTO wp_roster (FirstName,LastName,Position) values( ?, ?, ?)";
             $q = $pdo->prepare($sql);
-            $q->execute(array($id,$FirstName,$LastName,$Position));
+            $q->execute(array($FirstName,$LastName,$Position));
             Database::disconnect();
             header("Location: index2.php");
         }
@@ -68,15 +64,6 @@
                     </div>
 
                     <form class="form-horizontal" action="create.php" method="post">
-                      <div class="control-group <?php echo !empty($IDError)?'error':'';?>">
-                        <label class="control-label">ID</label>
-                        <div class="controls">
-                            <input name="ID" type="text"  placeholder="ID" value="<?php echo !empty($id)?$id:'';?>">
-                            <?php if (!empty($IDError)): ?>
-                                <span class="help-inline"><?php echo $IDError;?></span>
-                            <?php endif; ?>
-                        </div>
-                      </div>
 
                       <div class="control-group <?php echo !empty($FirstNameError)?'error':'';?>">
                         <label class="control-label">First Name</label>
@@ -109,7 +96,7 @@
                       </div>
 
 
-                      <div class="form-actions">
+                        <div class="form-actions">
                           <button type="submit" class="btn btn-success">Create</button>
                           <a class="btn" href="index2.php">Back</a>
                         </div>
